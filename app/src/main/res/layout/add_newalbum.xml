@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add new album"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        />
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/female"
+            android:id="@+id/icon"
+            android:layout_marginRight="10dp"/>
+        <EditText
+            android:id="@+id/newAlbumTitle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_toRightOf="@id/icon"
+            android:hint="Album title"/>
+        <EditText
+            android:id="@+id/users"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/newAlbumTitle"
+            android:layout_toRightOf="@id/icon"
+            android:hint="Add users"/>
+
+        <Button
+            android:id="@+id/mode"
+            android:layout_below="@id/icon"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:text="Public"
+            android:textAllCaps="false"
+            android:background="#3e9b17"/>
+
+        <Button
+            android:layout_below="@id/users"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:text="Add"
+            android:id="@+id/add"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:background="#9b1717"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
