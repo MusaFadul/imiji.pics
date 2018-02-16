@@ -1,0 +1,1 @@
+this an android application that enables cloud storage using firebase as cloud base data host.
