@@ -8,32 +8,159 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/colorAccent"
-        android:id="@+id/header">
-
+        android:layout_alignParentTop="true"
+        android:id="@+id/header"
+        android:background="#e3e6ea"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/albumNames"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All albums"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:textSize="18dp"
+            android:textColor="@color/baseDark"
+            android:layout_centerHorizontal="true"
+            />
     </RelativeLayout>
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/header"
+        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/header">
+        android:layout_height="wrap_content"
+        android:id="@+id/album_view"></android.support.v7.widget.RecyclerView>
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/album_view"></android.support.v7.widget.RecyclerView>
+    <TableLayout
 
-    </LinearLayout>
-
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:src="@mipmap/plus"
-        android:layout_margin="20dp"
-        android:layout_alignParentRight="true"
-        android:onClick="onAlbumAdd"/>
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0dp"
+        android:background="#ffffff"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="1dp"
+            android:showDividers="end">
+
+            <LinearLayout
+                android:layout_column="0"
+                android:background="#ffffff"
+                android:divider="@color/baseDark"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/account_box_color_24dp"
+                    android:tint="@color/baseDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Account"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_column="0"
+                android:background="#ffffff"
+                android:divider="@color/baseDark"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/mail_color_24dp"
+                    android:tint="@color/baseDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Messages"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_column="0"
+                android:background="#ffffff"
+                android:divider="@color/baseDark"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/camera_alt_black_24dp"
+                    android:tint="@color/baseDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Camera"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_column="0"
+                android:background="#ffffff"
+                android:divider="@color/baseDark"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/addNewAlbum"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:onClick="onAlbumAdd"
+                    android:src="@drawable/photo_album_black_24dp"
+                    android:tint="@color/baseDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="New album"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_column="0"
+                android:background="#ffffff"
+                android:divider="@color/baseDark"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:onClick="refreshView"
+                    android:src="@drawable/refresh_black_24dp"
+                    android:tint="@color/baseDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Refresh"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
 
 </RelativeLayout>

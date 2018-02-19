@@ -7,162 +7,178 @@
     tools:context="com.example.musa.imijifrb.Dashboard"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#f46b42"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="... description"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="8dp"
-            android:id="@+id/description"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@id/description"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="#ffffff"
-            android:text="Last name, first name"/>
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:background="#f46b42">
+
+
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="250dp"
             android:background="#a7bbce"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true">
 
             <ImageView
+                android:id="@+id/userPhoto"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@mipmap/female"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true"
+                android:onClick="onUploadProfilePhoto"
+                android:src="@mipmap/female" />
         </RelativeLayout>
-    </RelativeLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ffffff"
-        android:text=".. No messages available"
-        android:gravity="left|center"/>
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="... description" />
+    </LinearLayout>
 
-    <GridLayout
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2">
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="135dp"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
-            android:background="#e5dcc7"
-            android:gravity="center"
-            android:text="Tile1">
-
-            <ImageView
-                android:id="@+id/camera"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/camera_alt_black_24dp"
-                android:onClick="onClickCamera"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/camera"
-                android:gravity="center"
-                android:text="Capture" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="135dp"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
-            android:background="#d8c7a0"
-            android:gravity="center"
-            android:text="Tile1">
-
-            <ImageView
-                android:id="@+id/Albums"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:onClick="onClickAlbum"
-                android:layout_centerInParent="true"
-                android:src="@drawable/photo_album_black_24dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Albums"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:text="Albums" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="135dp"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
-            android:background="#a39470"
-            android:gravity="center"
-            android:text="Tile1">
-
-            <ImageView
-                android:id="@+id/Messages"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/mail_black_24dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Messages"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:text="Messages" />
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="135dp"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill_horizontal"
-            android:background="#877751"
-            android:gravity="center"
-            android:text="Tile1">
-
-            <ImageView
-                android:id="@+id/Settings"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/settings_black_24dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Settings"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:text="Settings"
-                android:textStyle="bold" />
-        </RelativeLayout>
+        android:stretchColumns="0,1"
         >
 
-    </GridLayout>
+        <TableRow
+            android:layout_weight="1.0"
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_column="0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:background="#e5dcc7"
+                android:gravity="center"
+                android:text="Tile1">
+
+                <ImageView
+                    android:id="@+id/camera"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/camera_alt_black_24dp"
+                    android:onClick="onClickCamera"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/camera"
+                    android:gravity="center"
+                    android:text="Capture" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_column="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:background="#d8c7a0"
+                android:gravity="center"
+                android:text="Tile1">
+
+                <ImageView
+                    android:id="@+id/Albums"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:onClick="onClickAlbum"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/photo_album_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Albums"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="Albums" />
+
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1.0"
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_column="0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:background="#a39470"
+                android:gravity="center"
+                android:text="Tile1">
+
+                <ImageView
+                    android:id="@+id/Messages"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/mail_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Messages"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="Messages" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_column="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/baseDark"
+                android:gravity="center"
+                android:text="Tile1">
+
+                <ImageView
+                    android:id="@+id/Settings"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/settings_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Settings"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="Settings"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </TableRow>
+
+
+    </TableLayout>
+
 
 </LinearLayout>
