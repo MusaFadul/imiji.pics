@@ -1,6 +1,7 @@
 package com.example.musa.imijifrb;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -212,29 +213,11 @@ public class Albums extends AppCompatActivity {
 
         Commons.pushNewAlbum(newAlbum, getApplicationContext());
 
+    }
 
-        /**
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("hska").setValue("0").addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("hska");
-                    mDatabase.child("owner").setValue("enoch");
-                    mDatabase.child("mode").setValue("public");
-                    mDatabase.child("created").setValue(ServerValue.TIMESTAMP);
-                    mDatabase.child("users").setValue("enoch");
-
-                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-
-                } else{
-                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-         */
-
+    public void onClickAccount(View view){
+        Intent i = new Intent(this, Dashboard.class);
+        startActivity(i);
     }
 
 }
