@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_margin="1dp">
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent"
+        android:src="@mipmap/female"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_below="@id/photo"
+        android:id="@+id/photo_title"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Demo"/>
+
+</RelativeLayout>
